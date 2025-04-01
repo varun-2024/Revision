@@ -21,6 +21,13 @@ app.get("/rolldice", (req, res) => {
   let diceVal = Math.floor(Math.random() * 6) + 1;
   res.render("rolldice.ejs", { diceVal }); // Same name Key : Value Pair for convenience
 });
+
+app.get("/ig/:username", (req, res) => {
+  let followers = ["Bob", "John", "Sam", "Pete", "Toby", "Robin"];
+  const { username } = req.params;
+  res.render("ig.ejs", { username, followers });
+});
+
 app.listen(port, (req, res) => {
   console.log(`Server is running on port ${port}`);
 });

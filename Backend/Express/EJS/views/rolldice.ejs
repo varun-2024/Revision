@@ -10,6 +10,9 @@
     <h1>Roll A Dice</h1>
     <p>Roll a Dice, and test your luck:</p>
     <p><%= "Your dice number is: " + (diceVal)%></p>
+    <% if(diceVal ==6){%>
+    <h3>Congratulations! You rolled a 6. Now Roll again.</h3>
+    <% } %>
     <button>Click Me</button>
   </body>
 </html>

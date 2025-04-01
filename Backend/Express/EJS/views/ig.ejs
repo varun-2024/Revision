@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>IG</title>
+  </head>
+  <body>
+    <h1>Instagram</h1>
+    <!-- <h3>This page belongs to</h3> -->
+    <h3><%= "This Page belongs to - " + "@" + (username)%></h3>
+    <h4>List of Followers</h4>
+    <ul>
+        <%for(let i=0; i<followers.length; i++){ %><!-- can also use for-of loop for(name of followers)-->
+            <li><%=followers[i]%></li>
+        <%}%>
+    </ul>
+    <div>
+      <button>Follow</button>
+      <button>Message</button>
+    </div>
+  </body>
+</html>
