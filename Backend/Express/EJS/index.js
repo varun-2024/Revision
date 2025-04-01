@@ -13,6 +13,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
+/* app.get("/rolldice", (req, res) => {
+  let num = Math.floor(Math.random() * 6) + 1; 
+  res.render("rolldice.ejs", { diceVal: num }); // diceVal is the Key and num is the value
+}); */
+app.get("/rolldice", (req, res) => {
+  let diceVal = Math.floor(Math.random() * 6) + 1;
+  res.render("rolldice.ejs", { diceVal }); // Same name Key : Value Pair for convenience
+});
 app.listen(port, (req, res) => {
   console.log(`Server is running on port ${port}`);
 });
