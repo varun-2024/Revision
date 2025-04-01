@@ -15,6 +15,25 @@ app.get("/", (req, res) => {
   console.log("Hello");
 });
 
+app.get("/:username/:id", (req, res) => {
+  let id = req.params.id;
+  let userName = req.params.username;
+  console.log(req.params);
+  res.send(`Hello ${userName}! Your ID is ${id}`);
+});
+
+app.get("/search", (req, res) => {
+  console.log(req.query);
+  let { q, color } = req.query;
+  if (!q && !color) {
+    res.send(`No search Query`);
+  } else if (q && color) {
+    res.send(`Your Search for ${q} in ${color} would be performed`);
+  } else {
+    res.send(`Your Search ${q} would be performed`);
+  }
+});
+
 app.get(/.*/, (req, res) => {
   res.status(404).send("Page Not Found");
 });
