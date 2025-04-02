@@ -22,10 +22,21 @@ app.get("/rolldice", (req, res) => {
   res.render("rolldice.ejs", { diceVal }); // Same name Key : Value Pair for convenience
 });
 
-app.get("/ig/:username", (req, res) => {
+/* app.get("/ig/:username", (req, res) => {
   let followers = ["Bob", "John", "Sam", "Pete", "Toby", "Robin"];
   const { username } = req.params;
   res.render("ig.ejs", { username, followers });
+}); */
+app.get("/ig/:username", (req, res) => {
+  let { username } = req.params;
+  const instaData = require("./data.json");
+  const data = instaData[username];
+  if (data) {
+    console.log(data);
+    res.render("ig.ejs", { data });
+  } else {
+    res.status(404).render("error.ejs");
+  }
 });
 
 app.listen(port, (req, res) => {

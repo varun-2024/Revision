@@ -36,3 +36,9 @@ button {
   top: 10%;
   left: 50%; */
 }
+
+img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}

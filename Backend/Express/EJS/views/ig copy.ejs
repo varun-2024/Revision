@@ -9,16 +9,13 @@
   <body>
     <h1>Instagram</h1>
     <!-- <h3>This page belongs to</h3> -->
-    <h3><%= "This Page belongs to - " + "@" + data.name%></h3>
+    <h3><%= "This Page belongs to - " + "@" + (username)%></h3>
     <h4>List of Followers</h4>
-    <p>Followers : <%=data.followers%></p>
-    <p>Following : <%=data.following%></p>
-    <hr />
-    <%for(post of data.posts) {%>
-    <img src="<%= post.image%>" alt="some image" />
-    <p>Likes : <%=post.likes%></p>
-    <p>Comments : <%=post.comments%></p>
-    <% }%>
+    <ul>
+        <%for(let i=0; i<followers.length; i++){ %><!-- can also use for-of loop for(name of followers)-->
+            <li><%=followers[i]%></li>
+        <%}%>
+    </ul>
     <div>
       <button>Follow</button>
       <button>Message</button>
